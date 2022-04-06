@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Platzi Conf Hawaii</title>
+</head>
+
+<!-- data-bs-spy="scroll": aplicar scroll sobre el contenido -->
+<!-- data-bs-target: indica el id de la barra de navegación -->
+<!-- data-bs-offset: indica la altura que tiene la barra de navegación para agregarlo en el scroll -->
+
+<body data-bs-spy="scroll" data-bs-target="#customNavbar" data-bs-offset="48">
+
+  <!-- Header -->
+  <header id="header" class="section-header">
+    <!-- navbar: clase para que Bootstrap identifique una barra de navegación -->
+    <!-- navbar-expand-lg: indica en que tipo de pantalla se expanderá -->
+    <!-- navbar-light, navbar-dark: indica el color de los hipervínculos -->
+    <!-- bg-ligth, bg-dark: Background Dark/Light (Color de Bootstrap) -->
+    <!-- fixed-top: fija la barra en la parte superior del body -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <!-- navbar-brand: sección en el que se coloca el nombre del proyecto o marca -->
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/platzi-logo.png" alt="Platzi Logo">
+          Conf Hawaii
+        </a>
+        <!-- navbar-toogler: indica el botón de despliegue -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbar"
+          aria-controls="customNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- navbar-toogler-icon: icono estándar del menú de Bootstrap -->
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- collapse: contenido que se colapsará -->
+        <!-- navbar-collapse: para agrupar y ocultar el contenido de la barra de navegación. -->
+        <!-- id: identificador para aplicarle el scroll a la navegación -->
+        <div class="collapse navbar-collapse" id="customNavbar">
+          <!-- navbar-nav: indica el listado de navegación -->
+          <!-- me-auto (Margin End Auto): Coloca un margen al final poniendo el elemento a la izquierda. -->
+          <!-- ms-auto (Margin Start Auto): Coloca un margen al inico poniendo el elemento a la derecha -->
+          <!-- mb-2: Margin Bottom de 2 -->
+          <!-- mb-lg-0: Margin Bottom 0 a partir de pantallas grandes -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- nav-item: indica un item de la barra de navegación -->
+            <li class="nav-item">
+              <!-- active: indica el link activo, tendrá otros estilos -->
+              <a class="nav-link" aria-current="page" href="#conferencia">Conferencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#speakers">Oradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#information">Información</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#register">Inscríbete</a>
+            </li>
+            <li class="nav-item">
+              <!-- text-platzi es una clase agregada para indicarle estilos -->
+              <a class="nav-link text-platzi" aria-current="page" href="#" data-bs-toggle="modal"
+                data-bs-target="#customModal">Comprar Tickets</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Header -->
+
+  <!-- Carousel -->
+  <main class="section-main" id="conferencia">
+    <!-- Siempre debe tener un id para el control de componentes de desplazamiento -->
+    <!-- Los elementos de control e indicadores deben tener un atributo data-bs-target que coincida con el id -->
+    <!-- carousel: indica a Bootstrap que el elemento es un carousel -->
+    <!-- slide: para darle el efecto de deslizamiento a las imágenes -->
+    <!-- carousel-fade: agrega un efecto fade (Efecto de difuminado de imagen) -->
+    <!-- data-bs-ride: aplica el cambio de imágenes en automático -->
+    <!-- data-bs-pause: activa/desactiva la pausa de imagen cuando el puntero esta encima -->
+    <div id="customCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
+
+      <!-- Indicadores de posición -->
+      <!--<div class="carousel-indicators">
+        <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>-->
+
+      <!-- carousel-inner: indica el contenedor del carousel -->
+      <div class="carousel-inner">
+        <!-- Siempre uno de los items debe llevar la clase active sino no se mostrará el carousel -->
+        <!-- data-bs-interval: para cambiar el tiempo de retraso para pasar al siguiente elemento. -->
+        <div class="carousel-item active" data-bs-interval="10000">
+
+          <!-- d-block: Display block -->
+          <!-- w-100: width 100% -->
+          <img src="assets/images/hawaii.jpg" class="d-block w-100" alt="Hawaii 1">
+
+          <!-- Contenido del slide -->
+          <!-- d-none: Display none desde dispositivos pequeños. -->
+          <!-- d-md-block: Display block desde dispositivos medianos. -->
+          <!--<div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>-->
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/hawaii2.jpg" class="d-block w-100" alt="Hawaii 2">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/hawaii3.jpeg" class="d-block w-100" alt="Hawaii 3">
+        </div>
+      </div>
+
+      <!-- Botones de previo y siguiente -->
+      <!--<button class="carousel-control-prev" type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>-->
+
+      <!-- Overlay -->
+      <div class="overlay">
+        <div class="container">
+          <div class="row align-items-center">
+            <!-- text-end: texto alineado al final apartir de cero -->
+            <!-- text-md-end: texto alineado al final apartir de una pantalla mediana -->
+            <div class="col-md-6 offset-md-6 text-center text-md-end">
+              <h1>Platzi Config Hawaii</h1>
+              <!-- d-none: texto alineado al final -->
+              <!-- d-md-block: texto alineado al final -->
+              <p class="d-none d-md-block">Platzi Conf llega por pimera vez a Hawaii! Un evento para
+                compartir con nuestra comunidad el conocimiento y experiencia
+                de los expertos que están creando el futuro de internet.
+                Ven a conocer a miembros del Team Platzi, a otros
+                estudiantes de Platzi y a los oradores de primer nivel
+                que tenemos para ti. Te esperamos!</p>
+              <a class="btn btn-outline-light" role="button" href="#">Quiero ser Orador</a>
+              <!-- data-bs-toggle="modal": indica que abrirá un modal -->
+              <!-- data-bs-target="#customModal": hace referencia al modal que abrirá a través de su id -->
+              <button type="button" class="btn btn-platzi"data-bs-toggle="modal"
+                data-bs-target="#customModal">Comprar Tickets</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- Carousel -->
+
+  <!-- Speakers -->
+  <!-- mb-5: Margin Bottom de 5 -->
+  <!-- mt-5: Margin Top de 5 -->
+  <section id="speakers" class="section-speakers mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <!-- text-center: Texto centrado -->
+        <!-- text-uppercase: Texto en Mayúsculas -->
+        <div class="col text-center text-uppercase">
+          <!-- small: elemento para texto pequeños -->
+          <small>Conoce a los</small>
+          <h2>Oradores</h2>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <!-- El card en Bootstrap no tiene un width definido, ocupará todo el ancho del elemento padre -->
+          <!-- card: indica que el elemento es un card -->
+          <div class="card">
+            <!-- card-img-top: indica imagen del card -->
+            <img src="assets/speakers/sacha.jpg" class="card-img-top" alt="Speaker 1">
+            <!-- card-body: contenido del card -->
+            <div class="card-body">
+              <div class="badges">
+                <!-- badge: indica que el elemento es un badge -->
+                <!-- rounded-pill: estilo de pildora redonda -->
+                <!-- bg-danger/bg-secondary: background color -->
+                <span class="badge rounded-pill bg-danger">JavaScript</span>
+                <span class="badge rounded-pill bg-secondary">HTML</span>
+              </div>
+              <!-- card-title: Título del card -->
+              <h5 class="card-title mb-3">Sacha Lifszyc</h5>
+              <!-- card-text: descripción en el card -->
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cumque inventore asperiores corrupti perferendis voluptatibus
+                adipisci neque maiores eius libero delectus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="assets/speakers/leonidas2.jpeg" class="card-img-top" alt="Speaker 2">
+            <div class="card-body">
+              <div class="badges">
+                <span class="badge rounded-pill bg-warning">CSS</span>
+                <span class="badge rounded-pill bg-primary">Java</span>
+              </div>
+              <h5 class="card-title mb-3">Leonidas Esteban</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cumque inventore asperiores corrupti perferendis voluptatibus
+                adipisci neque maiores eius libero delectus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="assets/speakers/freddy.jpeg" class="card-img-top" alt="Speaker 3">
+            <div class="card-body">
+              <div class="badges">
+                <span class="badge rounded-pill bg-success">Bootstrap</span>
+                <span class="badge rounded-pill bg-dark">Spring Boot</span>
+              </div>
+              <h5 class="card-title mb-3">Freddy Vega</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cumque inventore asperiores corrupti perferendis voluptatibus
+                adipisci neque maiores eius libero delectus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="assets/speakers/cvander.jpeg" class="card-img-top" alt="Speaker 4">
+            <div class="card-body">
+              <div class="badges">
+                <span class="badge rounded-pill bg-info text-dark">Ionic</span>
+                <span class="badge rounded-pill bg-light text-dark">Flutter</span>
+              </div>
+              <h5 class="card-title">Christian Van Der H.</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cumque inventore asperiores corrupti perferendis voluptatibus
+                adipisci neque maiores eius libero delectus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Speakers -->
+
+  <!-- Lugar Fecha -->
+  <section id="information" class="section-info">
+    <!-- container-fluid: para ocupar todo el ancho de la pantalla -->
+    <div class="container-fluid">
+      <!-- align-items-center: alinear verticalmente el contenido -->
+      <div class="row align-items-center">
+        <!-- ps-0: padding start o left en 0 -->
+        <!-- pe-0: padding end o rigth en 0 -->
+        <div class="col-12 col-lg-6 ps-0 pe-0">
+          <img class="w-100" src="assets/images/honolulu.jpg" alt="Isla de Honolulu">
+        </div>
+        <!-- p-4: padding 4 en todas las direcciones -->
+        <div class="col-12 col-lg-6 p-4">
+          <h2>Honolulu - Octubre 2025</h2>
+          <p>Honolulu o Honolulú es la capital y localidad más grande del
+            estado de Hawái, en los Estados Unidos. Honolulu es la más
+            sureña de entre las principales ciudades estadounidenses.
+            Aunque el nombre de Honolulu se refiere al área urbana en
+            la costa sureste de la isla de Oahu, la ciudad y el condado
+            de Honolulu han formado una ciudad-condado consolidada que
+            cubre toda la isla (aproximadamente 600 km² de superficie).</p>
+          <a href="https://es.wikipedia.org/wiki/Honolulu" target="_blank" class="btn btn-outline-dark">Conoce más</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Lugar Fecha -->
+
+  <!-- Inscríbete -->
+  <section id="register" class="section-inscribete mt-5 mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center text-uppercase">
+          <small>Conviértete en un</small>
+          <h2>Orador</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          Anótate como un orador para dar una
+          <!-- abbr: elemento HTML de abreviatura -->
+          <!-- title: texto que se mostrará al pasar el cursor sobre el elemento -->
+          <!-- class="initialism": coloca un estilo subrayado diferente y texto en mayúsculas -->
+          <!-- data-bs-toggle: indica que es un Tooltip -->
+          <!-- data-bs-placement="bottom": indica la posición del tooltip -->
+          <abbr title="Charlas de 5 minutos" data-bs-toggle="tooltip" data-bs-placement="bottom">charla ignite</abbr>.
+          Cuéntanos de que quieres hablar.
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col-lg-8 offset-lg-2">
+          <form action="">
+            <!-- g: gutters o gap, que indican el espacio entre componentes dentro de una grilla -->
+            <!-- g-2: espacio de 2 en todas las direcciones -->
+            <!-- gx/gy: ambos espacios horizontales/verticales -->
+            <div class="row g-2">
+              <div class="col-12 col-md-6">
+                <!-- form-control: indica un componente de formulario, puede ser input, select u otro -->
+                <!-- form-control-sm: indica el tamaño del componente, en este caso small -->
+                <input type="text" class="form-control form-control-sm" placeholder="Nombre" aria-label="Nombre">
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" class="form-control form-control-sm" placeholder="Apellido" aria-label="Apellido">
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">
+                <!-- aria-describedby: indica el componente de ayuda -->
+                <textarea class="form-control form-control-sm" placeholder="Sobre qué quieres hablar" id="theme"
+                  style="height: 100px" aria-describedby="themeHelp"></textarea>
+                <!-- id: identificador de ayuda -->
+                <!-- form-text: indica que es un texto de ayuda al componente principal -->
+                <!-- text-muted: texto defuminado -->
+                <div id="themeHelp" class="form-text text-muted">
+                  * Recuerda incluir un título para tu charla.
+                </div>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <!-- d-grid: display grid para que el botón ocupe todo el ancho de la fila -->
+              <div class="col d-grid">
+                <button class="btn btn-platzi" type="submit">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Inscríbete -->
+
+  <!-- Footer -->
+  <!-- pb:Padding Bottom, pt: Padding Top -->
+  <footer id="footer" class="section-footer pb-5 pt-5">
+    <div class="container">
+      <!-- text-center: Text align center -->
+      <div class="row text-center">
+        <div class="col-12 col-lg"><a href="#">Prenguntas Frecuentes</a></div>
+        <div class="col-12 col-lg"><a href="#">Contáctanos</a></div>
+        <div class="col-12 col-lg"><a href="#">Prensa</a></div>
+        <div class="col-12 col-lg"><a href="#">Conferencias</a></div>
+        <div class="col-12 col-lg"><a href="#">Términos y Condiciones</a></div>
+        <div class="col-12 col-lg"><a href="#">Privacidad</a></div>
+        <div class="col-12 col-lg"><a href="#">Estudiantes</a></div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer -->
+
+  <!-- Modal de Compra -->
+  <!-- modal: indica que el elemento es un modal -->
+  <!-- fade: efecto de desplazamiento de arriba hacia abajo -->
+  <!-- aria-labelledby: hace referencia al título del modal referenciado por el id -->
+  <!-- aria-hidden="true": oculta el componente, garantiza que solo las partes relevantes de la página queden expuestas a la tecnología asistencial -->
+  <!-- tabindex: indica si el elemento puede ser enfocado, y si participa en la navegación secuencial del teclado. -->
+  <div class="modal fade" id="customModal" aria-labelledby="labelModal" aria-hidden="true" tabindex="-1">
+    <!-- modal-dialog: panel del modal -->
+    <!-- modal-dialog-centered: centrar verticalmente el modal -->
+    <!-- modal-dialog-scrollable: permite agregar scroll al modal cuando el contenido es más grande que la pantalla.
+         Si no se coloca el modal se adapta a todo el contenido del body -->
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <!-- modal-content: contenido del modal -->
+      <div class="modal-content">
+        <!-- modal-header: cabecera del modal -->
+        <div class="modal-header">
+          <!-- modal-title: título del modal -->
+          <h5 class="modal-title" id="labelModal">Comprar Tickets</h5>
+          <!-- data-bs-dismiss="modal": funcionalidad para cerrar el modal -->
+          <!-- aria-label: descripción del elemento -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- modal-body: cuerpo del modal -->
+        <div class="modal-body">
+          <form action="">
+            <div class="row">
+              <div class="col">
+                <!-- input-group: grupo de elementos que conforman un solo componente -->
+                <!-- input-group-sm: para reducir a tamaño pequeño todo el grupo de input -->
+                <div class="input-group">
+                  <!-- input-group-text: texto descriptivo adjunto al input -->
+                  <span class="input-group-text" id="inputUser">@</span>
+                  <!-- aria-describedby: hace referencia al texto descriptivo -->
+                  <!-- form-control-sm: si aplicamos el tamaño al input solo modificará el tamaño de la letra -->
+                  <input type="text" class="form-control" placeholder="Nombre de Usuario" 
+                    aria-label="Nombre de Usuario" aria-describedby="inputUser">
+                </div>
+              </div>
+            </div>
+          </form>
+          <!-- alert: indica que el elemento es una alerta -->
+          <!-- alert-primary: aplica estilos con el color primario de Bootstrap -->
+          <div class="alert alert-primary mt-2" role="alert">
+            Recibirás un correo al inscribirte.
+          </div>
+        </div>
+        <!-- modal-footer: pie de página del modal -->
+        <div class="modal-footer">
+          <!-- data-bs-dismiss="modal": funcionalidad para cerrar el modal -->
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-platzi">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de Compra -->
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="javascript.js"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

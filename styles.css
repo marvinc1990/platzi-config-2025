@@ -1,0 +1,77 @@
+:root {
+    --color-platzi: #97c93e;
+    --color-platzi-dark: #78a034;
+}
+
+/* Globals */
+.text-platzi {
+    color: var(--color-platzi) !important;
+}
+
+.text-platzi:hover {
+    color: var(--color-platzi-dark) !important;
+}
+
+.btn-platzi {
+    color: #FFF !important;
+    background-color: var(--color-platzi) !important;
+}
+
+.btn-platzi:hover {
+    background-color: var(--color-platzi-dark) !important;
+}
+
+/* Section Header */
+.section-header .navbar-brand img {
+    width: 80px;
+}
+
+/* Section Carousel */
+.section-main .carousel-item img {
+    display: block;
+    width: 100%; /* También se puede agregar directamente a las imagenes de los items */
+    height: 70vh;
+    object-fit: cover; /* propiedad para ajustarse a su contenedor */
+    filter: grayscale(40%);
+}
+
+.section-main .carousel {
+    position: relative;
+}
+
+.section-main .carousel .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #FFF;
+    z-index: 1;
+}
+
+.section-main .carousel .overlay .container, 
+.section-main .carousel .overlay .row {
+    height: 100%;
+}
+
+/* Section Lugar Fecha */
+.section-info {
+    background-color: #E0E0E0;
+}
+
+/* Section Footer */
+.section-footer {
+    background: linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372);
+}
+
+.section-footer a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.section-footer a:hover {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: underline;
+}
